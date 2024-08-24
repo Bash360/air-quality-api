@@ -1,0 +1,3 @@
+interface IAirQualityService{
+  public getNearestCity():
+}
