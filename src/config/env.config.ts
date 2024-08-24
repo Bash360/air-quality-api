@@ -1,0 +1,21 @@
+import 'dotenv/config';
+
+const { PORT,
+PG_HOST,
+PG_PORT,
+PG_USER,
+PG_PASSWORD,
+PG_DATABASE,
+NODE_ENV,
+AQ_API_KEY,
+AQ_API_ENDPOINT, } = process.env;
+
+export const ENV = Object.freeze({ PORT,
+PG_HOST,
+PG_PORT,
+PG_USER,
+PG_PASSWORD,
+PG_DATABASE,
+NODE_ENV,
+AQ_API_KEY,
+AQ_API_ENDPOINT } );
