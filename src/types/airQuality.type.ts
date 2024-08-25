@@ -1,4 +1,4 @@
-export type SimplifiedAirQuality = {
+export type AirQualityType = {
   city: string;
   state: string;
   country: string;
