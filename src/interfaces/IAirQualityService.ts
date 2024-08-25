@@ -1,8 +1,8 @@
 import { AirQualityType } from "../types/airQuality.type";
 
 export interface IAirQualityService{
-  getNearestCity(): AirQualityType;
+  getNearestCity(): Promise<AirQualityType>;
 
-  getByCoordinates(latitude:number,longitude:number): AirQualityType;
+  getByCoordinates(latitude:number,longitude:number): Promise<AirQualityType>;
   
 }
