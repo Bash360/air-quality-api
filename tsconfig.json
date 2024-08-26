@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES6",
     "module": "commonjs",
-    "strict": true,
+    "strict": false,
     "esModuleInterop": true,
     "experimentalDecorators": true,  // Must be true to use decorators
     "emitDecoratorMetadata": true,   // Must be true to use decorators with TypeORM
