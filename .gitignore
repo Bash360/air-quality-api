@@ -28,7 +28,7 @@ Thumbs.db
 
 
 *.migration.ts
-
+migration/
 
 coverage/
 
