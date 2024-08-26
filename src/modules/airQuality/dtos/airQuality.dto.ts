@@ -1,11 +1,11 @@
 export class AirQualityDto{
-  pollution: Pollution;
+  pollution!: Pollution;
 }
 
 class Pollution {
-  ts: Date;
-  aqius: string;
-  mainus: string;
-  aqicn: string;
-  maincn: string;
+  ts!: Date;
+  aqius!: number;
+  mainus!: string;
+  aqicn!: number;
+  maincn!: number;
 }

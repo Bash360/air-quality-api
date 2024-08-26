@@ -6,9 +6,9 @@ export type AirQualityType = {
   longitude: number;
   pollution: {
     ts: Date;
-    aqius: string;
+    aqius: number;
     mainus: string;
-    aqicn: string;
-    maincn: string;
+    aqicn: number;
+    maincn: number;
   };
 };

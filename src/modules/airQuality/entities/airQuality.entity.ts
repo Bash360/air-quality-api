@@ -6,17 +6,17 @@ class Pollution {
   @Column({ nullable: true })
   ts!: Date;
 
-  @Column({ nullable: true })
-  aqius!: string;
+  @Column({ type: "float", nullable: true })
+  aqius!: number;
 
   @Column({ nullable: true })
   mainus!: string;
 
-  @Column({ nullable: true })
-  aqicn!: string;
+  @Column({ type: "float", nullable: true })
+  aqicn!: number;
 
-  @Column({ nullable: true })
-  maincn!: string;
+  @Column({ type: "float", nullable: true })
+  maincn!: number;
 }
 
 class Coordinates {

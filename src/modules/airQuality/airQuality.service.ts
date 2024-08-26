@@ -7,13 +7,13 @@ import AirQualityRepository from "./airQuality.repository";
 import { AirQualityDto } from "./dtos/airQuality.dto";
 import { AirQuality } from "./entities/airQuality.entity";
 import { ENV } from "../../config/env.config";
-import { Repository } from "typeorm";
 
 export class AirQualityService {
-  private airQualityRepository: Repository<AirQuality>;
+  private readonly airQualityRepository: AirQualityRepository;
 
   constructor() {
-    this.airQualityRepository = dataSource.getRepository(AirQuality);
+    const airQualityRepo = dataSource.getRepository(AirQuality);
+    this.airQualityRepository = new AirQualityRepository(airQualityRepo);
   }
 
   async addAirQualityParis(): Promise<AirQuality> {
@@ -34,8 +34,9 @@ export class AirQualityService {
       city,
       country,
       state,
-      coordinates:  { latitude, longitude },
+      coordinates: { latitude, longitude },
     });
+
     return newAirQuality;
   }
 
