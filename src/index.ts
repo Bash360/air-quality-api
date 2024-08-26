@@ -4,6 +4,7 @@ import routes from './routes';
 import { ENV } from './config/env.config';
 import { setupSwagger } from './config/swagger.config';
 import dataSource from './config/dataSource'; 
+import './cron/airQuality.cron';
 
 const app = express();
 const PORT = ENV.PORT || 3000;
