@@ -12,7 +12,7 @@ const mockResponse = {
       city: "Uzgen",
       state: "Osh",
       country: "Kyrgyzstan",
-      location: { type: "Point", coordinates: [73.30068, 40.76994] },
+      location: { type: "Point", coordinates: [-74.006, 40.7128] },
       current: {
         pollution: {
           ts: "2024-08-25T15:00:00.000Z",
@@ -61,8 +61,8 @@ test("Should return correct air quality data", async () => {
     city: "Uzgen",
     state: "Osh",
     country: "Kyrgyzstan",
-    latitude: 73.30068,
-    longitude: 40.76994,
+    latitude: 40.7128,
+    longitude: -74.006,
     pollution: {
       ts: "2024-08-25T15:00:00.000Z",
       aqius: 57,
