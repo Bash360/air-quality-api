@@ -1,14 +1,13 @@
 import 'reflect-metadata';
 import express from 'express';
-import { DataSource } from 'typeorm';
-import { AppDataSource } from './config/orm';
 import routes from './routes';
 import { ENV } from './config/env.config';
+import { setupSwagger } from './config/swagger.config';
+import dataSource from './config/dataSource'; 
+import './cron/airQuality.cron';
 
 const app = express();
 const PORT = ENV.PORT || 3000;
-
-const dataSource = new DataSource(AppDataSource());
 
 dataSource.initialize()
   .then(() => {
@@ -16,6 +15,8 @@ dataSource.initialize()
     
     app.use('/api', routes);
 
+    setupSwagger(app);
+    
     app.listen(PORT, () => {
       console.info(`Server is running on port ${PORT}`);
     });
