@@ -1,4 +1,4 @@
-import { Repository } from "typeorm";
+import { QueryBuilder, Repository } from "typeorm";
 
 export default abstract class BaseRepository<T> {
   private entity: Repository<T>;
@@ -9,11 +9,10 @@ export default abstract class BaseRepository<T> {
 
   public async create(data: T): Promise<T> {
     try {
-       return await this.entity.save(data);
+      return await this.entity.save(data);
     } catch (error) {
-         throw new Error(`Failed to create entity: ${error.message}`);
+      throw new Error(`Failed to create entity: ${error.message}`);
     }
-   
   }
 
   public async findOneByCondition(filterCondition: any): Promise<T> {
@@ -28,5 +27,10 @@ export default abstract class BaseRepository<T> {
       where: filterCondition,
       select: selectedFields,
     });
+  }
+
+  protected getQueryBuilder(alias: string = "entity") {
+    const queryBuilder = this.entity.createQueryBuilder(alias);
+    return queryBuilder;
   }
 }

@@ -7,6 +7,7 @@ import AirQualityRepository from "./airQuality.repository";
 import { AirQualityDto } from "./dtos/airQuality.dto";
 import { AirQuality } from "./entities/airQuality.entity";
 import { ENV } from "../../config/env.config";
+import MostPollutedDto from "./dtos/mostPolluted.dto";
 
 export class AirQualityService {
   private readonly airQualityRepository: AirQualityRepository;
@@ -52,5 +53,24 @@ export class AirQualityService {
     const responseDto: AirQualityDto = { pollution: result["pollution"] };
 
     return new StandardResponse<AirQualityDto>(HttpStatusCode.Ok, responseDto);
+  }
+
+  async getMostPolluted(): Promise<StandardResponse<MostPollutedDto>> {
+    try {
+      const mostPolluted: AirQuality =
+        await this.airQualityRepository.findMostPolluted();
+
+      const responseDto: MostPollutedDto = {
+        dateTime: mostPolluted.createdAt,
+        aqius: mostPolluted.pollution.aqius,
+      };
+
+      return new StandardResponse<MostPollutedDto>(
+        HttpStatusCode.Ok,
+        responseDto
+      );
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
