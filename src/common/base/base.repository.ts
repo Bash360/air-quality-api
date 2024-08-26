@@ -1,4 +1,4 @@
-import { QueryBuilder, Repository } from "typeorm";
+import { Repository, SelectQueryBuilder } from "typeorm";
 
 export default abstract class BaseRepository<T> {
   private entity: Repository<T>;
@@ -29,7 +29,7 @@ export default abstract class BaseRepository<T> {
     });
   }
 
-  protected getQueryBuilder(alias: string = "entity") {
+  protected getQueryBuilder(alias: string = "entity"): SelectQueryBuilder<T> {
     const queryBuilder = this.entity.createQueryBuilder(alias);
     return queryBuilder;
   }
