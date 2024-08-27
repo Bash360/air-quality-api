@@ -10,11 +10,9 @@ The Air Quality API is a Node.js-based REST API that provides real-time air qual
 - [Features](#features)
 - [Technologies](#technologies)
 - [Installation](#installation)
-- [Configuration](#configuration)
 - [Database Setup](#database-setup)
 - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
-- [Cron Jobs](#cron-jobs)
 - [Testing](#testing)
 - [Project Structure](#project-structure)
 
@@ -32,7 +30,7 @@ The Air Quality API is a Node.js-based REST API that provides real-time air qual
 - **TypeORM**: ORM for interacting with the PostgreSQL database.
 - **PostgreSQL**: Relational database for storing air quality data.
 - **Winston**: Logging library for managing log messages.
-- **Jest**: Testing framework for unit and integration tests.
+- **Jest**: Testing framework for unit.
 - **Supertest**: HTTP assertion library for testing API endpoints.
 - **Dotenv**: Environment variable management.
 
@@ -42,9 +40,9 @@ The Air Quality API is a Node.js-based REST API that provides real-time air qual
 
 Ensure you have the following installed:
 
-- **Node.js** 
-- **npm** 
-- **PostgreSQL** 
+- **Node.js**:
+- **npm**:
+- **PostgreSQL**:
 
 ### Steps
 
@@ -53,3 +51,51 @@ Ensure you have the following installed:
    ```bash
    git clone https://github.com/Bash360/air-quality-api.git
    cd air-quality-api
+
+2. **Install Dependencies:**:
+
+   ```bash 
+   npm install 
+
+3. **Environment Variables:**:
+  create a .env file in the root folder to configure the database connection and API keys
+  PORT=5000
+  PG_HOST=localhost
+  PG_PORT=5432
+  PG_USER=posty
+  PG_PASSWORD=your_pg_password
+  PG_DATABASE=airQualityDb
+  NODE_ENV=dev
+  AQ_API_KEY=api-key
+  AQ_API_ENDPOINT=https://api.airvisual.com
+  API_BASE_URL=endpoint
+  PARIS_LATITUDE=48.856613
+  PARIS_LONGITUDE=2.352222
+
+
+## Database Setup
+
+- Create a PostgreSQL database as defined in the `.env` file.
+- Apply the database schema migrations using TypeORM:
+
+  ```bash
+  npm run typeorm -- -d src/config/dataSource.ts migration:run
+
+
+## Running the Application 
+- **Developement Environment**: Developement Environment
+  ```bash
+  npm run dev
+
+
+## API Endpoints
+
+- **Base URL:** [Base URL]()
+- **Swagger Documentation:** [Swagger Documentation]()
+
+
+## Testing
+
+  ```bash
+   npm run test
+
