@@ -26,10 +26,6 @@ Thumbs.db
 *.swp
 *.swo
 
-
-*.migration.ts
-migration/
-
 coverage/
 
 !.env.example  # Allow a sample .env file for others to copy
