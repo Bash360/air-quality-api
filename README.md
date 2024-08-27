@@ -14,7 +14,6 @@ The Air Quality API is a Node.js-based REST API that provides real-time air qual
 - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
 - [Testing](#testing)
-- [Project Structure](#project-structure)
 
 ## Features
 
