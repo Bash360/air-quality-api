@@ -43,7 +43,7 @@ describe("Get air quality by latitude, longitude /api/airquality", () => {
   });
 });
 
-describe("Get Date and time where paris is the most polluted /api/airquality/most-polluted ", () => {
+describe("Get Date and time when paris is the most polluted /api/airquality/most-polluted ", () => {
   it("should return 200", async () => {
     const res = await request(app).get("/api/airquality/most-polluted");
     const { Result } = res.body;

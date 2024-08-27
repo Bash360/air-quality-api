@@ -5,6 +5,16 @@ import { validateCoordinatesQuery } from '../../middleware/airQuality.middleware
 const airQualityRouter = Router();
 const airQualityController = new AirQualityController();
 
+/**
+ * @swagger
+ * /airquality/most-polluted:
+ *   get:
+ *     summary: Get Date and time when paris is the most polluted
+ *     responses:
+ *       200:
+ *         description: Successful operation
+ */
+
 airQualityRouter.get("/most-polluted", airQualityController.getMostPolluted);
 
 
