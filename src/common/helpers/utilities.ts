@@ -1,4 +1,5 @@
 import { ENV } from "../../config/env.config";
+import logger from "../../config/logger";
 import { AirQualityType } from "../../types/airQuality.type";
 import axios from "axios";
 
@@ -40,6 +41,7 @@ export default class Utility {
         pollution,
       };
     } catch (error) {
+      logger.error("Utility.getByCoordinates: Error fetching air quality data", error);
       throw new Error("Failed fetching air quality data");
     }
   }

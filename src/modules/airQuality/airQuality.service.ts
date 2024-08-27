@@ -8,6 +8,7 @@ import { AirQualityDto } from "./dtos/airQuality.dto";
 import { AirQuality } from "./entities/airQuality.entity";
 import { ENV } from "../../config/env.config";
 import MostPollutedDto from "./dtos/mostPolluted.dto";
+import logger from "../../config/logger";
 
 export class AirQualityService {
   private readonly airQualityRepository: AirQualityRepository;
@@ -70,7 +71,7 @@ export class AirQualityService {
         responseDto
       );
     } catch (error) {
-      console.log(error);
+      logger.error("Get Most Polluted Service: error retrieving data", error);
     }
   }
 }

@@ -1,14 +1,15 @@
 import cron from "node-cron";
 import { AirQualityService } from "../modules/airQuality/airQuality.service";
+import logger from "../config/logger";
 
 const airQualityService = new AirQualityService();
 
 const task = async () => {
   try {
-    console.info("Task to add air quality for paris every minute");
+    logger.info("cron-task to add air quality for paris every minute");
     await airQualityService.addAirQualityParis();
   } catch (error) {
-    console.error("Error occurred during the cron job:", error);
+    logger.error("cron-task Error occurred during the cron job:",error);
   }
 };
 

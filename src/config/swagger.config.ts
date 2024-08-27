@@ -2,6 +2,7 @@ import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 import { Express } from "express";
 import { ENV } from "./env.config";
+import logger from "./logger";
 
 const options: swaggerJSDoc.Options = {
   definition: {
@@ -24,5 +25,6 @@ const swaggerSpec = swaggerJSDoc(options);
 
 export function setupSwagger(app: Express): void {
   app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-  console.log("Swagger docs available at /api-docs");
+  
+  logger.info("Swagger docs available at /api-docs");
 }
