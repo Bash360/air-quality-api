@@ -26,10 +26,7 @@ Thumbs.db
 *.swp
 *.swo
 
-
-*.migration.ts
-
-
 coverage/
 
 !.env.example  # Allow a sample .env file for others to copy
+docker-compose.yml
