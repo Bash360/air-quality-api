@@ -90,8 +90,8 @@ Ensure you have the following installed:
 
 ## API Endpoints
 
-- **Base URL:** [Base URL]()
-- **Swagger Documentation:** [Swagger Documentation]()
+- **Base URL:** [Base URL](https://air-quality-api-vwig.onrender.com)
+- **Swagger Documentation:** [Swagger Documentation](https://air-quality-api-vwig.onrender.com/api-docs)
 
 
 ## Testing
