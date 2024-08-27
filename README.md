@@ -12,9 +12,8 @@ The Air Quality API is a Node.js-based REST API that provides real-time air qual
 - [Installation](#installation)
 - [Database Setup](#database-setup)
 - [Running the Application](#running-the-application)
-- [API Endpoints](#api-endpoints)
+- [API Information](#api-endpoints)
 - [Testing](#testing)
-- [Project Structure](#project-structure)
 
 ## Features
 
@@ -88,7 +87,7 @@ Ensure you have the following installed:
   npm run dev
 
 
-## API Endpoints
+## API Information
 
 - **Base URL:** [https://air-quality-api-vwig.onrender.com]
 - **Swagger Documentation:** [Swagger Documentation](https://air-quality-api-vwig.onrender.com/api-docs){:target="_blank"}
